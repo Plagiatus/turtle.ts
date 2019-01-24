@@ -3,8 +3,8 @@ let turtle;
 function init() {
     let canvas = document.getElementsByTagName("canvas")[0];
     let crc = canvas.getContext("2d");
-    turtle = new Turtle.Turtle(crc, canvas.width / 2, canvas.height / 2);
-    turtle.moveForward(50);
+    turtle = new Turtle.Turtle(crc, canvas.width / 2, canvas.height - 30);
+    // turtle.moveForward(50);
     // turtle.rotateClockwise(-90);
     // turtle.moveForward(20);
     // for (let i:number = 10; i < 100; i += 5){
@@ -14,19 +14,20 @@ function init() {
     // traverseTree(6);
     // moveWithLoops();
     // turtle.stepByStep = true;
-    // createTree(4, 6);
+    createTree(3, 5);
     // circle(100,20);
     // pentagonCircle();
     // spiralOut();
     // spiralIn();
-    // rainbowWheel();
+    turtle.moveTo(canvas.width / 2, 200);
+    rainbowWheel();
     // rainbowCircle();
     // rainbowCircle2();
     // squares();
     // turtle.showHistory();
     // turtle.reset();
     // turtle.runAll();
-    // turtle.runStepByStep(20, turtledone);
+    turtle.runStepByStep(50, turtledone);
 }
 function turtledone() {
     console.log("turtle is done");
@@ -124,7 +125,7 @@ function rainbowWheel() {
             turtle.rotateClockwise(3);
         }
     }
-    turtle.hide();
+    // turtle.hide();
 }
 function rainbowCircle() {
     turtle.setWidth(5);

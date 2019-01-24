@@ -266,6 +266,10 @@ module Turtle {
         }
 
         setWidth(width: number) {
+			if (!this.executing) {
+                this.actions.push({ action: this.setWidth.bind(this), param: width });
+                return;
+            }
             this.penWidth = width;
         }
 

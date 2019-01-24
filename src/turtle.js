@@ -224,6 +224,10 @@ var Turtle;
             this.penColor = color;
         }
         setWidth(width) {
+            if (!this.executing) {
+                this.actions.push({ action: this.setWidth.bind(this), param: width });
+                return;
+            }
             this.penWidth = width;
         }
         hide() {
