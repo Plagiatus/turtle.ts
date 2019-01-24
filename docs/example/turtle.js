@@ -125,6 +125,7 @@ var Turtle;
             this.rotation = this.savedRotation;
         }
         reset() {
+            this.resetActions();
             this.resetCanvas();
             this.resetTurtle();
         }
@@ -134,11 +135,13 @@ var Turtle;
             this.drawTurtle();
         }
         resetTurtle() {
-            this.actions = [];
             this.x = this.startPosition.x;
             this.y = this.startPosition.y;
             this.rotation = this.startRotation;
             this.drawTurtle();
+        }
+        resetActions() {
+            this.actions = [];
         }
         moveForward(px) {
             // console.log(px, this.stepByStep);

@@ -34,6 +34,7 @@ declare module Turtle {
         reset(): void;
         resetCanvas(): void;
         resetTurtle(): void;
+        resetActions(): void;
         moveForward(px: number): void;
         moveTo(x: number, y: number): void;
         moveTo(d: Vector2): void;
